@@ -1,0 +1,105 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creative Image Gallery | CodeAlpha</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Ambient Background Glows -->
+  <div class="glow-bg glow-1"></div>
+  <div class="glow-bg glow-2"></div>
+
+  <div class="gallery-wrapper">
+    <!-- Header -->
+    <header class="gallery-header">
+      <span class="badge">CodeAlpha Task 1</span>
+      <h1>Interactive <span>Image Gallery</span></h1>
+      <p>A responsive gallery with category filtering, lightbox zoom, and smooth transitions.</p>
+    </header>
+
+    <!-- Filter Tabs -->
+    <div class="filter-container">
+      <button class="filter-btn active" onclick="filterImages('all', this)">All Works</button>
+      <button class="filter-btn" onclick="filterImages('nature', this)">Nature</button>
+      <button class="filter-btn" onclick="filterImages('tech', this)">Technology</button>
+      <button class="filter-btn" onclick="filterImages('architecture', this)">Architecture</button>
+    </div>
+
+    <!-- Image Grid -->
+    <div class="gallery-grid">
+      
+      <div class="gallery-item" data-category="nature" data-title="Mountain Sunrise" onclick="openLightbox(0)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwy-8LyWk8bQf-LTXKxzi7nGm7l7qPLfZfc06XL3OTIA&s=10" >
+        <div class="card-overlay">
+          <span class="category-tag">Nature</span>
+          <h3>Mountain Sunrise</h3>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="tech" data-title="Cyber Circuit Matrix" onclick="openLightbox(1)">
+        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800" alt="Cyber Circuit Matrix">
+        <div class="card-overlay">
+          <span class="category-tag">Technology</span>
+          <h3>Cyber Circuit</h3>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="architecture" data-title="Modern Glass Skyscraper" onclick="openLightbox(2)">
+        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800" alt="Modern Glass Skyscraper">
+        <div class="card-overlay">
+          <span class="category-tag">Architecture</span>
+          <h3>Modern Skyscraper</h3>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="nature" data-title="Misty Forest Stream" onclick="openLightbox(3)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5VqWLmf9sE9gJlmTtGQT5Uvn20njexyD8buYdquZh9A&s=10" alt="Misty Forest Stream">
+        <div class="card-overlay">
+          <span class="category-tag">Nature</span>
+          <h3>Misty Forest</h3>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="tech" data-title="Developer Code Studio" onclick="openLightbox(4)">
+        <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=800" alt="Developer Code Studio">
+        <div class="card-overlay">
+          <span class="category-tag">Technology</span>
+          <h3>Code Studio</h3>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="architecture" data-title="Minimalist Interior Space" onclick="openLightbox(5)">
+        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=800" alt="Minimalist Interior Space">
+        <div class="card-overlay">
+          <span class="category-tag">Architecture</span>
+          <h3>Minimal Interior</h3>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Pro Lightbox Modal -->
+  <div id="lightbox" class="lightbox">
+    <span class="close-btn" onclick="closeLightbox()">&times;</span>
+    <button class="nav-btn prev-btn" onclick="changeSlide(-1)">&#10094;</button>
+    <div class="lightbox-content">
+      <img id="lightbox-img" src="" alt="Zoomed View">
+      <div class="lightbox-caption">
+        <span id="lightbox-counter">1 of 6</span>
+        <h3 id="lightbox-title">Image Title</h3>
+      </div>
+    </div>
+    <button class="nav-btn next-btn" onclick="changeSlide(1)">&#10095;</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
